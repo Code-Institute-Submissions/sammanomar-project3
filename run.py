@@ -11,12 +11,13 @@ def drop_piece():
     pass
 
 def is_valid_location(board, col):
-    pass
+    return board [5][col] == 0
 
 def get_next_open_row():
     pass
 
-board = create_board()   
+board = create_board()
+print(board)   
 game_over = False
 turn = 0    #differnitate between player 1 and player 2 turn
 
@@ -32,13 +33,4 @@ while not game_over:
 
     # switching between player 1 and player 2
     turn += 1
-    turn = turn % 2    
-
-
-
-
-
-
-
-# to the end board = create_board()
-#print(board)
+    turn = turn % 2
