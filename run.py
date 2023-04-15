@@ -6,7 +6,7 @@ COLUMN_COUNT = 7    #global variable
 
 # create board (6 rows by 7 columns matrix)
 def create_board():
-    board = np.zeros((6,7))
+    board = np.zeros((ROW_COUNT,COLUMN_COUNT))
     return board
 
 # drop piece
@@ -14,15 +14,24 @@ def drop_piece(board, row, col, piece):
     board[row][col] = piece
 
 def is_valid_location(board, col):
-    return board [5][col] == 0
+    return board [ROW_COUNT-1][col] == 0
 
-def get_next_open_row(board, col):    # which row piece will fall on
+def get_next_open_row(board, col):  # which row piece will fall on
     for r in range(ROW_COUNT):
         if board [r][col] == 0:
             return r
 
-def print_board(board):     #flip the board build up orientation from bottom to up at numpy
+def print_board(board): #flip the board build up orientation from bottom to up at numpy
     print(np.flip(board,0))
+
+def winning_move(board, piece): #win functionality
+    #check horizontal locations for win
+    for c in range (COLUMN_COUNT-3):
+        for r in range(ROW_COUNT):
+            if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
+                return True
+
+
     
 
 board = create_board()
