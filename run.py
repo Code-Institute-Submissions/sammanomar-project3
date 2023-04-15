@@ -31,15 +31,24 @@ def winning_move(board, piece): #win functionality
             if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
                 return True
     
-
     #check vertical locations for win
     for c in range (COLUMN_COUNT):
         for r in range(ROW_COUNT-3):
             if board[r][c] == piece and board[r+1][c] == piece and board[r+2][c] == piece and board[r+3][c] == piece:
                 return True
+    
+    #check positively sloped diaganols for win
+    for c in range (COLUMN_COUNT-3):
+        for r in range(ROW_COUNT-3):
+            if board[r][c] == piece and board[r+1][c+1] == piece and board[r+2][c+2] == piece and board[r+3][c+3] == piece:
+                return True
 
     
+    #check negatively sloped diaganols for win
+    
 
+
+    
 board = create_board()
 print_board(board)   
 game_over = False
