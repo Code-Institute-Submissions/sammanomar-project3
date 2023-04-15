@@ -30,7 +30,13 @@ def winning_move(board, piece): #win functionality
         for r in range(ROW_COUNT):
             if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
                 return True
+    
 
+    #check vertical locations for win
+    for c in range (COLUMN_COUNT):
+        for r in range(ROW_COUNT-3):
+            if board[r][c] == piece and board[r+1][c] == piece and board[r+2][c] == piece and board[r+3][c] == piece:
+                return True
 
     
 
@@ -48,6 +54,10 @@ while not game_over:
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)
             drop_piece(board, row, col, 1)
+
+            if winning_move(board, 1):
+                print("PLAYER 1 WINS!!! Congrats!!!")
+                game_over = True
 
 
     # ask for player 2 input
