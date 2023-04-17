@@ -59,12 +59,19 @@ turn = 0    # differnitate between player 1 and player 2 turn
 
 # main game loop
 while not game_over:
+    print("----------------------------------------------------------------------------")
+    print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!")
+    print("Entries should be numbers from 0 to 6 only")
+    print("First left column is column: 0")
+    print("Pick column number to drop piece at first empty spot from bottom")
+    print("Connect four vertically or horizontally or diagonally to win")
+    print("----------------------------------------------------------------------------")
 
     # ask for player 1 input
     if turn == 0:
-        # which column to drop piece   
-        col = int(input("Player 1 Make your Selection (0-6):"))
-
+        # which column to drop piece
+        col = int(input("Player 1 Make your Column Selection (0-6):"))
+       
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)
             drop_piece(board, row, col, 1)
@@ -77,7 +84,7 @@ while not game_over:
     # ask for player 2 input
     else:
         # which column to drop piece  
-        col = int(input("Player 2 Make your Selection (0-6):"))
+        col = int(input("Player 2 Make your Column Selection (0-6):"))
 
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)
@@ -87,9 +94,9 @@ while not game_over:
                 print("PLAYER 2 WINS!!! Congrats!!!")
                 game_over = True     
 
-
     print_board(board)        
 
     # switching between player 1 and player 2
     turn += 1
     turn = turn % 2
+    
