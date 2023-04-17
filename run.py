@@ -1,5 +1,7 @@
 # install numpy
 import numpy as np
+# install pygame
+import pygame
 
 ROW_COUNT = 6       #global variable
 COLUMN_COUNT = 7    #global variable
