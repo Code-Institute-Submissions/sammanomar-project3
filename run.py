@@ -2,8 +2,9 @@
 import numpy as np
 # install pygame library
 import pygame
-#solve no available video device problem by using the below commands:
+import sys
 
+#solve no available video device problem by using the below commands:
 #sudo apt-get update
 #sudo apt-get dist-upgrade
 #sudo apt-get install libsdl1.2debian:i386
@@ -36,6 +37,7 @@ def print_board(board): #flip the board build up orientation from bottom to up a
     print(np.flip(board,0))
 
 def winning_move(board, piece): #win functionality
+
     #check horizontal locations for win
     for c in range (COLUMN_COUNT-3):
         for r in range(ROW_COUNT):
@@ -62,7 +64,10 @@ def winning_move(board, piece): #win functionality
             if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
                 return True
 
-    
+#same function as print_board function above but with pygame graphic
+def draw_board(board):
+    pass
+
 board = create_board()
 print_board(board)   
 game_over = False
@@ -83,6 +88,13 @@ screen = pygame.display.set_mode(size) #get pygame to read the size
 
 # main game loop
 while not game_over:
+    #pygame docs webpage(mouse motion, mouse button down, key down etc...)
+    for event in pygame.event.get()
+        #exit game event of game window by click x at the top 
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+
     # ask for player 1 input
     if turn == 0:
         col = int(input("Player 1 Make your Selection (0-6):"))
