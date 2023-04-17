@@ -1,7 +1,16 @@
 # install numpy
 import numpy as np
-# install pygame
+# install pygame library
 import pygame
+#solve no available video device problem by using the below commands:
+
+#sudo apt-get update
+#sudo apt-get dist-upgrade
+#sudo apt-get install libsdl1.2debian:i386
+
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 ROW_COUNT = 6       #global variable
 COLUMN_COUNT = 7    #global variable
@@ -58,6 +67,19 @@ board = create_board()
 print_board(board)   
 game_over = False
 turn = 0    #differnitate between player 1 and player 2 turn
+
+pygame.init() #link must be added to any pygame function
+
+#define screen size in px
+
+SQUARESIZE = 100 
+
+width = COLUMN_COUNT * SQUARESIZE
+height = (ROW_COUNT+1) * SQUARESIZE #additional row on the top to drop the piece
+
+size = (width, height)
+
+screen = pygame.display.set_mode(size) #get pygame to read the size
 
 # main game loop
 while not game_over:
