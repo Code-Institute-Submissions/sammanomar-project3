@@ -1,17 +1,5 @@
 # install numpy
 import numpy as np
-# install pygame library
-import pygame
-import sys
-
-# solve no available video device problem by using the below commands:
-# sudo apt-get update
-# sudo apt-get dist-upgrade
-# sudo apt-get install libsdl1.2debian:i386
-
-import os
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-
 
 ROW_COUNT = 6       # global variable
 COLUMN_COUNT = 7    # global variable
@@ -64,67 +52,44 @@ def winning_move(board, piece): # win functionality
             if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
                 return True
 
-# same function as print_board function above but with pygame graphic
-def draw_board(board):
-    pass
-
 board = create_board()
 print_board(board)   
 game_over = False
 turn = 0    # differnitate between player 1 and player 2 turn
 
-pygame.init() # link must be added to any pygame function
-
-# define screen size in px
-
-SQUARESIZE = 100 
-
-width = COLUMN_COUNT * SQUARESIZE
-height = (ROW_COUNT+1) * SQUARESIZE # additional row on the top to drop the piece
-
-size = (width, height)
-
-screen = pygame.display.set_mode(size) #get pygame to read the size
-
 # main game loop
 while not game_over:
-    # pygame website under docs (mouse motion, mouse button down, key down etc...)
-    for event in pygame.event.get()
-        # exit game event of game window by click x at the top 
-        if event.type == pygame.QUIT:
-            sys.exit()
-        
-        # mouse button down event
-        if event.type == pygame.MOUSEBUTTONDOWN:    
-            # ask for player 1 input
-            if turn == 0:
-            # which column to drop piece   
-                col = int(input("Player 1 Make your Selection (0-6):"))
 
-                if is_valid_location(board, col):
-                    row = get_next_open_row(board, col)
-                    drop_piece(board, row, col, 1)
+    # ask for player 1 input
+    if turn == 0:
+        # which column to drop piece   
+        col = int(input("Player 1 Make your Selection (0-6):"))
 
-                    if winning_move(board, 1):
-                        print("PLAYER 1 WINS!!! Congrats!!!")
-                        game_over = True
+        if is_valid_location(board, col):
+            row = get_next_open_row(board, col)
+            drop_piece(board, row, col, 1)
+
+            if winning_move(board, 1):
+                print("PLAYER 1 WINS!!! Congrats!!!")
+                game_over = True
 
 
-            # ask for player 2 input
-            else: 
-                col = int(input("Player 2 Make your Selection (0-6):"))
+    # ask for player 2 input
+    else:
+        # which column to drop piece  
+        col = int(input("Player 2 Make your Selection (0-6):"))
 
-                if is_valid_location(board, col):
-                    row = get_next_open_row(board, col)
-                    drop_piece(board, row, col, 2)
+        if is_valid_location(board, col):
+            row = get_next_open_row(board, col)
+            drop_piece(board, row, col, 2)
 
-                    if winning_move(board, 2):
-                        print("PLAYER 2 WINS!!! Congrats!!!")
-                        game_over = True     
+            if winning_move(board, 2):
+                print("PLAYER 2 WINS!!! Congrats!!!")
+                game_over = True     
 
 
-            print_board(board)        
+    print_board(board)        
 
-            # switching between player 1 and player 2
-            turn += 1
-            turn = turn % 2
+    # switching between player 1 and player 2
+    turn += 1
+    turn = turn % 2
