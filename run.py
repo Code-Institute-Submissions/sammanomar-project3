@@ -1,13 +1,26 @@
-# install numpy
-import numpy as np
-
 ROW_COUNT = 8       # global variable
-COLUMN_COUNT = 12    # global variable
+COLUMN_COUNT = 12   # global variable
 
 # create board (8 rows by 12 columns matrix)
-def create_board():
-    board = np.zeros((ROW_COUNT,COLUMN_COUNT))
-    return board
+Class Board():
+    
+    # store state of the game and handle users input until there is a winner
+    # instance variable
+    def __init__(self):
+        # create board array
+        self.board = [[' ' for _ in range(COLUMN_COUNT)] for _ in range(ROW_COUNT)]
+        # track turns that have been played and last move input
+        self.turns = 0
+        self.last_move = [-1, -1] # row, col (invalid move because we haven't played anything yet)
+
+    #reusable function to display the board to the terminal as the game goes on
+    def print_board(self):
+        # number the columns
+        print("\n")
+        for c in range(COLUMN_COUNT):
+            #display what number this column is and start counting at 1
+            print(f" ({c + 1})", end="")
+        print("\n")
 
 # drop piece
 def drop_piece(board, row, col, piece):
