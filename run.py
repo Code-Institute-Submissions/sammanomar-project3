@@ -52,19 +52,19 @@ class Board():
         return False
 
     def check_winner(self):
-        last_row = self.last_move[0]
-        last_col = self.last_move[1]
-        last_letter = self.board[last_row][last_col]
+        last_row = self.last_move[0] # tracking
+        last_col = self.last_move[1] # tracking
+        last_letter = self.board[last_row][last_col] # tracking
 
         # [r, c] direction, matching letter count, locked bool
-        directions = [[[-1, 0], 0, True], 
-                      [[1, 0], 0, True], 
-                      [[0, -1], 0, True],
-                      [[0, 1], 0, True],
-                      [[-1, -1], 0, True],
-                      [[1, 1], 0, True],
-                      [[-1, 1], 0, True],
-                      [[1, -1], 0, True]]
+        directions = [[[-1, 0], 0, True], # check upward
+                      [[1, 0], 0, True],  # check upward
+                      [[0, -1], 0, True], # check downard
+                      [[0, 1], 0, True],  # check downard
+                      [[-1, -1], 0, True],# check left
+                      [[1, 1], 0, True],  # check right
+                      [[-1, 1], 0, True], # check diagonally
+                      [[1, -1], 0, True]] # check diagonally
         
         # Search outwards looking for matching pieces
         for a in range(4):
