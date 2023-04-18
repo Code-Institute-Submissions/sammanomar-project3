@@ -95,6 +95,12 @@ def play():
 
     game_over = False
     while not game_over:
+        print("--------------------------------------------------------------------")
+        print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
+        print("Entries should be numbers between 0 to 10 only")
+        print("Pick column # to drop piece at first empty spot from bottom")
+        print("Connect four vertically or horizontally or diagonally to win")
+        print("--------------------------------------------------------------------")
         game.print_board()
 
         # Ask the user for input, but only accept valid turns
