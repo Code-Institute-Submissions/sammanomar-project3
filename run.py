@@ -28,11 +28,31 @@ class Board():
             print("\n")
         #python trick to print 64 dashes all next to each other    
         print(f"{'-' * 64}\n")
+
+    # switching between player X and player O
+    def which_turn(self):
+        players = ['X', 'O']
+        return players[self.turns % 2]    
+
 #create an instance of the board
 def play():
     game = Board()
 
-    game.print_board()
+    game_over = False
+    while not game_over:
+        #continue playing
+
+        game.print_board()
+
+        # Ask the user for input, but only accept valid turns
+        valid_move = False
+        while not valid_move:
+            user_move = input(f"{game.which_turn()}'s Turn - pick a column (1-{COLUMN_COUNT}): ")
+
+        try:
+            valid_move = game.turn(int(user_move)-1)
+        except:
+            print(f"Please choose a number between 1 and {COLUMN_COUNT}")   
 
 #set up game loop with python trick that execute play function when file is run
 if __name__ == '__main__':
