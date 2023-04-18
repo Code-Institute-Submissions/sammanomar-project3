@@ -33,7 +33,8 @@ class Board():
     def which_turn(self):
         players = ['X', 'O']
         return players[self.turns % 2]
-    
+
+    # test row column coordinates is within our 2D array
     def in_bounds(self, r, c):
         return (r >= 0 and r < ROW_COUNT and c >= 0 and c < COLUMN_COUNT)
 
