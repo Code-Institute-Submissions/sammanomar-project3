@@ -1,10 +1,10 @@
 # install numpy
 import numpy as np
 
-ROW_COUNT = 6       # global variable
-COLUMN_COUNT = 7    # global variable
+ROW_COUNT = 8       # global variable
+COLUMN_COUNT = 12    # global variable
 
-# create board (6 rows by 7 columns matrix)
+# create board (8 rows by 12 columns matrix)
 def create_board():
     board = np.zeros((ROW_COUNT,COLUMN_COUNT))
     return board
@@ -61,7 +61,7 @@ turn = 0    # differnitate between player 1 and player 2 turn
 while not game_over:
     print("----------------------------------------------------------------------------")
     print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!")
-    print("Entries should be numbers from 0 to 6 only")
+    print("Entries should be numbers from 0 to 11 only")
     print("First left column is column: 0")
     print("Pick column number to drop piece at first empty spot from bottom")
     print("Connect four vertically or horizontally or diagonally to win")
@@ -70,8 +70,9 @@ while not game_over:
     # ask for player 1 input
     if turn == 0:
         # which column to drop piece
-        col = int(input("Player 1 Make your Column Selection (0-6):"))
-       
+        # check whether data is valid
+        col = int(input("Player 2 Make your Column Selection (0-11):"))       
+        
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)
             drop_piece(board, row, col, 1)
@@ -84,7 +85,7 @@ while not game_over:
     # ask for player 2 input
     else:
         # which column to drop piece  
-        col = int(input("Player 2 Make your Column Selection (0-6):"))
+        col = int(input("Player 2 Make your Column Selection (0-11):"))
 
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)
