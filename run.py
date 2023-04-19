@@ -1,5 +1,5 @@
-ROW_COUNT = 8       # global variable
-COLUMN_COUNT = 10   # global variable
+ROW_COUNT = 6       # global variable
+COLUMN_COUNT = 8   # global variable
 
 # create board object (8 rows by 12 columns)
 class Board():
@@ -95,14 +95,12 @@ def play():
 
     game_over = False
     while not game_over:
-        print("--------------------------------------------------------------------")
+        print("----------------------------------------------------------------")
         print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
-        print("Entries should be numbers from 0 to 10 only")
-        print("0 = 10, -0 = 10, -1 = 9, -2 = 8, -3 = 7 and so on")
-        print("Pick column number to drop piece at first empty spot from bottom")
         print("Connect four vertically or horizontally or diagonally to win")
-        print("--------------------------------------------------------------------")
+        print("----------------------------------------------------------------")
         game.print_board()
+
 
         # Ask the user for input, but only accept valid turns
         valid_move = False

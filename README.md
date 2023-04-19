@@ -1,5 +1,6 @@
 # CONNECT FOUR GAME
-Connect four game  is a Python terminal game. which runs in the Code Institute mock terminal on Heroku. 2 Users (X or O) can try to beat each other by connecting four pieces whether vertically or horizontally or diagonally. The first player to connect four will win.
+Connect four game  is a Python terminal game. which runs in the Code Institute mock terminal on Heroku. 2 Users (X or O) can try to beat each other by dropping and connecting four pieces whether vertically or horizontally or diagonally. The first player to connect four will win.
+
 
 Here Is the live version of my project
 
@@ -15,7 +16,7 @@ The winner is the player who connects four four first whether vertically or hori
 
 ## Features
 ### Existing Features
-- Random 10 row X 8 column board generation
+- Random 6 row X 8 column board generation
 - Marked up board with columns number on the top
 
 
@@ -27,8 +28,9 @@ The winner is the player who connects four four first whether vertically or hori
 
 - Input validation and error-checkina
 1. You cannot enter strings or texts
-2. You must enter numbers from 0 to 10 only
-3. Zero and minus values between 0 to 10 are acceptable, -10 value is not acceptable 0 = 10, -0 = 10 -1 = 9, -2 = 8, -3 = 7 and so on
+2. You must enter numbers from 0 to 8 only
+3. Zero and minus values between 0 to 8 are acceptable, -8 value is not acceptable 0 = 8, -0 = 8 -1 = 7, -2 = 6, -3 = 5 and so on
+
 
 
 
