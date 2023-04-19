@@ -96,9 +96,10 @@ def play():
     game_over = False
     while not game_over:
         print("--------------------------------------------------------------------")
-        print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!!dsa")
-        print("Entries should be numbers between 0 to 10 only")
-        print("Pick column # to drop piece at first empty spot from bottom")
+        print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
+        print("Entries should be numbers from 0 to 10 only")
+        print("0 = 10, -0 = 10, -1 = 9, -2 = 8, -3 = 7 and so on")
+        print("Pick column number to drop piece at first empty spot from bottom")
         print("Connect four vertically or horizontally or diagonally to win")
         print("--------------------------------------------------------------------")
         game.print_board()
