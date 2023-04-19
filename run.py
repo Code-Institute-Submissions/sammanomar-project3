@@ -27,7 +27,7 @@ class Board():
                 print(f"  {self.board[r][c]}  |", end="")
             print("\n")
         # python trick to print 64 dashes all next to each other  
-        print(f"{'-' * 64}\n")
+        print(f"{'-' * 50}\n")
 
     # switching between player X and player O
     def which_turn(self):
@@ -95,10 +95,9 @@ def play():
 
     game_over = False
     while not game_over:
-        print("----------------------------------------------------------------")
-        print("Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
-        print("Connect four vertically or horizontally or diagonally to win")
-        print("----------------------------------------------------------------")
+        print("-------------------------------------------------")
+        print("" "Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
+        print("-------------------------------------------------")
         game.print_board()
 
 
