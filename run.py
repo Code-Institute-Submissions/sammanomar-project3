@@ -95,9 +95,9 @@ def play():
 
     game_over = False
     while not game_over:
-        print("-------------------------------------------------")
-        print("" "Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
-        print("-------------------------------------------------")
+        print("--------------------------------------------------")
+        print("  Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
+        print("--------------------------------------------------")
         game.print_board()
 
 
