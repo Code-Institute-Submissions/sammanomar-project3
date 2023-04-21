@@ -1,4 +1,4 @@
-ROW_COUNT = 6       # global variable
+ROW_COUNT = 6      # global variable
 COLUMN_COUNT = 8   # global variable
 
 # create board object (8 rows by 12 columns)
@@ -104,12 +104,16 @@ def play():
         # Ask the user for input, but only accept valid turns
         valid_move = False
         while not valid_move:
-            user_move = input(f"{game.which_turn()}'s Turn - pick a column (1-{COLUMN_COUNT}): ")
             try:
-                valid_move = game.turn(int(user_move)-1)
-            except:
-                print(f"Please choose a number between 1 and {COLUMN_COUNT}")
+                user_move = int(input(f"{game.which_turn()}'s Turn - pick a column (1-{COLUMN_COUNT}): "))
+                if user_move <= 0 or user_move > 8:
+                    print(f"Please choose a number from 1 and {COLUMN_COUNT}")
+                else:    
+                    valid_move = (game.turn(int(user_move)-1))    
+            except ValueError:
+                print(f"Please choose a number from 1 and {COLUMN_COUNT}")
 
+                            
         # End the game if there is a winner
         game_over = game.check_winner()
         

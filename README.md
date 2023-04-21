@@ -35,7 +35,7 @@ The winner is the player who connects four four first whether vertically or hori
 - data maintained in class instances
 
 ### Future Features
-- Allow more players to play the game the board size and number of shios
+- Allow more players to play the game
 - bigger size board with more players 
 
 ## Data Model 
@@ -51,7 +51,7 @@ I used a python trick to print 64 dashes all next to each other using `print` me
 
 ## Bugs 
 When I wrote the proiect. I was aetting index errors because I had forgotten that the lists are zero indexed. I fixed
-this br addina size _ 1 where necessarv
+this br addina size _ 1 where necessary
 properly
 
 ## Remaining Bugs
