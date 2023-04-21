@@ -117,8 +117,8 @@ def play():
 
     game_over = False
     while not game_over:
-        print("--------------------------------------------------")
         print("  Welcome to DROP PIECES TO CONNECT FOUR GAME!!!")
+        print("        2 Players Game Without Computer")
         print("--------------------------------------------------")
         game.print_board()
 

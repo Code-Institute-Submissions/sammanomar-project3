@@ -1,7 +1,0 @@
-valid_move = False
-        while not valid_move:
-            user_move = input(f"{game.which_turn()}'s Turn - pick a column (1-{COLUMN_COUNT}): ")
-            try:
-                valid_move = (game.turn(int(user_move)-1))    
-            except:
-                print(f"Please choose a number from 1 and {COLUMN_COUNT}")
