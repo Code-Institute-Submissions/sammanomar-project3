@@ -4,15 +4,21 @@ COLUMN_COUNT = 8   # global variable
 # create board object (8 rows by 12 columns)
 class Board():
     # store state of the game and handle users input until there is a winner
-    # instance variable
     def __init__(self):
-        # create board array
+        """
+        Instance variable
+        Create board array
+        """
         self.board = [[' ' for _ in range(COLUMN_COUNT)] for _ in range(ROW_COUNT)]
         self.turns = 0 # track turns that have been played and last move input
         self.last_move = [-1, -1] # [r, c] # [r, c] (invalid move because we haven't played anything yet)
 
-    # reusable function to display the board to the terminal as the game goes on
+
     def print_board(self):
+        """
+        Reusable function to display the board 
+        to the terminal as the game goes on
+        """
         # number the columns
         print("\n") # new line
         # display what number this column is and start counting at 1
@@ -26,20 +32,29 @@ class Board():
             for c in range(COLUMN_COUNT):
                 print(f"  {self.board[r][c]}  |", end="")
             print("\n")
-        # python trick to print 64 dashes all next to each other  
+        # python trick to print 50 dashes all next to each other  
         print(f"{'-' * 50}\n")
 
-    # switching between player X and player O
+    
     def which_turn(self):
+        """
+        Switching between player X and player O
+        """
         players = ['X', 'O']
         return players[self.turns % 2]
 
-    # test row column coordinates is within our 2D array
+    
     def in_bounds(self, r, c):
+        """
+        Test row column coordinates is within our 2D array
+        """
         return (r >= 0 and r < ROW_COUNT and c >= 0 and c < COLUMN_COUNT)
 
-    # turn function
+    
     def turn(self, column):
+        """
+        Turn function
+        """
         # Search bottom up for an open slot
         for i in range(ROW_COUNT-1, -1, -1):
             if self.board[i][column] == ' ':
@@ -51,7 +66,11 @@ class Board():
 
         return False
 
+
     def check_winner(self):
+        """
+        Check winner function
+        """
         last_row = self.last_move[0] # tracking
         last_col = self.last_move[1] # tracking
         last_letter = self.board[last_row][last_col] # tracking
@@ -88,8 +107,11 @@ class Board():
         # Did not find any winners
         return False
 
-#create an instance of the board
+
 def play():
+    """
+    Create an instance of the board
+    """
     # Initialize the game board
     game = Board()
 

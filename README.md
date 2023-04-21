@@ -3,7 +3,7 @@ Connect four game  is a Python terminal game. which runs in the Code Institute m
 
 Here Is the live version of my project
 
-![](a.png)
+![](/screenshots/a.png)
 
 ## How to play
 Connect four is based on the classic connect four game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Connect_Four) 
@@ -17,20 +17,20 @@ The winner is the player who connects four four first whether vertically or hori
 - Random 6 row X 8 column board generation
 - Marked up board with columns number on the top
 
-![](b.png)
+![](/screenshots/b.png)
 
 - Play against another player
 - Accept users input
-![](c.png)
-![](d.png)
+![](/screenshots/c.png)
+![](/screenshots/d.png)
 
 - Input validation and error-checking
 1. You cannot enter strings or texts
-![](e.png)
+![](/screenshots/e.png)
 2. You must enter numbers from 0 to 8 only
-![](f.png)
-3. Zero and minus values between 0 to 8 are acceptable, -8 value is not acceptable 0 = 8, -0 = 8 -1 = 7, -2 = 6, -3 = 5 and so on
-![](i.png)
+![](/screenshots/f.png)
+3. Zero, negative values, letter or any special character values are not acceptable
+![](/screenshots/i.png)
 
 - data maintained in class instances
 
