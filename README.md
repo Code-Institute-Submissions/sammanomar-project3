@@ -5,6 +5,9 @@ Here Is the live version of my project:
 
 ![](/screenshots/a.png)
 
+## Game Chart
+![](/screenshots/chart.png)
+
 ## How to play
 Connect four is based on the classic connect four game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Connect_Four) 
 in this version, the players names are automaically generated (X,O).
@@ -50,7 +53,7 @@ I used a python trick to print 50 dashes all next to each other using `print` me
 
 ## Testing
 Have manually tested this proiect by doing the following:
-- passed the code through a PE8 linter and confirmed there are no problems
+- Passed the code through a PE8 linter and confirmed there are no problems
 - Given invalid inputs: strings when numbers are expected out of bounds inputs.
 - Tested in my local terminal and the Code Institute Heroku terminal
 
